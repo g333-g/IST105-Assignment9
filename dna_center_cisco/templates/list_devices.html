@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Devices</title>
+</head>
+<body>
+    <h1>Network Devices</h1>
+    {% if devices %}
+        <table border="1">
+            <tr>
+                <th>Hostname</th>
+                <th>IP Address</th>
+                <th>Platform</th>
+                <th>Status</th>
+            </tr>
+            {% for device in devices %}
+            <tr>
+                <td>{{ device.hostname }}</td>
+                <td>{{ device.managementIpAddress }}</td>
+                <td>{{ device.platformId }}</td>
+                <td>{{ device.reachabilityStatus }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No devices found</p>
+    {% endif %}
+</body>
+</html>
+

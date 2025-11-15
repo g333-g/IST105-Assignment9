@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Interfaces</title>
+</head>
+<body>
+    <h1>Device Interfaces for {{ device_ip }}</h1>
+    
+    <form method="get">
+        <input type="text" name="ip" placeholder="Enter device IP">
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if interfaces %}
+        <table border="1">
+            <tr>
+                <th>Interface</th>
+                <th>Status</th>
+                <th>VLAN</th>
+                <th>Speed</th>
+            </tr>
+            {% for intf in interfaces %}
+            <tr>
+                <td>{{ intf.portName }}</td>
+                <td>{{ intf.status }}</td>
+                <td>{{ intf.vlanId }}</td>
+                <td>{{ intf.speed }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
+

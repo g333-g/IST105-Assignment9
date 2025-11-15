@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication Token</title>
+</head>
+<body>
+    <h1>Authentication Token</h1>
+    {% if token %}
+        <p>Token: {{ token }}</p>
+    {% else %}
+        <p>Authentication failed</p>
+    {% endif %}
+</body>
+</html>
+
